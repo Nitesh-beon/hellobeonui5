@@ -1,0 +1,115 @@
+{
+  "_version": "1.85.0",
+  "sap.app": {
+    "id": "sap.btp.hellobeonui5",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.27.0",
+      "toolsId": "311e8ea6-b621-434d-91dd-5d68d69f8379"
+    },
+    "crossNavigation": {
+      "inbounds": {
+        "semanticobjecthellobeon-show": {
+          "semanticObject": "semanticobjecthellobeon",
+          "action": "show",
+          "title": "{{semanticobjecthellobeon-show.flpTitle}}",
+          "signature": {
+            "parameters": {},
+            "additionalParameters": "allowed"
+          }
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.149.0",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "sap.btp.hellobeonui5.i18n.i18n"
+        }
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "transition": "slide",
+        "type": "View",
+        "viewType": "XML",
+        "path": "sap.btp.hellobeonui5.view",
+        "async": true,
+        "viewPath": "sap.btp.hellobeonui5.view"
+      },
+      "routes": [
+        {
+          "name": "RouteView5",
+          "pattern": ":?query:",
+          "target": [
+            "TargetView5"
+          ]
+        }
+      ],
+      "targets": {
+        "TargetView5": {
+          "id": "View5",
+          "name": "View5"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "sap.btp.hellobeonui5.view.App",
+      "type": "XML",
+      "id": "App",
+      "async": true
+    }
+  },
+  "sap.cloud": {
+    "public": true,
+    "service": "sapbtphellobeonui5"
+  }
+}
